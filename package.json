@@ -1,0 +1,22 @@
+{
+  "name": "udp-multiplexer",
+  "version": "1.0.0",
+  "main": "udp-multiplexer.js",
+  "author": "Beau Gunderson <beau@beaugunderson.com> (https://beaugunderson.com/)",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "binary-parser-encoder": "^1.5.3",
+    "uWebSockets.js": "uNetworking/uWebSockets.js#v20.10.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint_d": "^12.2.1",
+    "prettier": "^2.7.1"
+  }
+}
