@@ -1,7 +1,7 @@
 {
-  "name": "udp-multiplexer",
+  "name": "wsjt-x-multiplexer",
   "version": "1.0.0",
-  "main": "udp-multiplexer.js",
+  "main": "wsjt-x-multiplexer.js",
   "author": "Beau Gunderson <beau@beaugunderson.com> (https://beaugunderson.com/)",
   "license": "MIT",
   "type": "module",
