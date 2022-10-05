@@ -121,7 +121,7 @@ function boolFormatter(b) {
 
 function numberFormatter(n) {
   const n_string = stringFormatter(n);
-  return isNaN(n_string) ? n_string : Number(n_string);
+  return Number.isNaN(n_string) ? n_string : Number(n_string);
 }
 
 function maxUnit32Formatter(value) {
@@ -212,8 +212,6 @@ const clearParser = new BinaryParser().endianess('big');
 // Not sent from WSJTX
 // .uint8('window');
 
-function clearEncoder(message) {}
-
 /* Modifiers
  * 0x00 - none
  * 0x02 - shift
@@ -249,8 +247,6 @@ const replyParser = new BinaryParser()
   .nest('message', { type: stringParser, formatter: stringFormatter })
   .uint8('low_confidence')
   .uint8('modifiers', { format: modifier_type.format });
-
-function replyEncoder(message) {}
 
 // Out since v2.0
 const qsoLoggedParser = new BinaryParser()
@@ -323,7 +319,7 @@ const highlightCallsignParser = new BinaryParser()
   .uint8('highlight_last', { formatter: boolFormatter });
 
 // In (untested) since v2.1
-const swicthConfigurationParser = new BinaryParser()
+const switchConfigurationParser = new BinaryParser()
   .endianess('big')
   .nest('configuration_name', { type: stringParser, formatter: stringFormatter });
 
@@ -421,7 +417,7 @@ const wsjtxParser = new BinaryParser()
       11: locationParser,
       12: loggedAdifParser,
       13: highlightCallsignParser,
-      14: swicthConfigurationParser,
+      14: switchConfigurationParser,
       15: configureParser,
     },
   });
@@ -484,22 +480,6 @@ export function decode(buffer) {
 
     console.error('Error:', error);
     console.error('Short decode:', short_decode);
-    return null;
-  }
-}
-
-export function encode(obj) {
-  const type_code = message_type.indexOf(obj.type);
-  if (type_code < 0) {
-    return null;
-  }
-
-  try {
-    // TODO: encode...
-    console.error('wsjtx.encode() not implemented.');
-    return null;
-  } catch (error) {
-    console.error(error);
     return null;
   }
 }
