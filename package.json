@@ -7,6 +7,7 @@
   "type": "module",
   "dependencies": {
     "binary-parser-encoder": "^1.5.3",
+    "qtdatastream": "^1.1.0",
     "uWebSockets.js": "uNetworking/uWebSockets.js#v20.10.0",
     "uuid": "^9.0.0"
   },
